@@ -1,47 +1,23 @@
-#include <stdio.h>
-
+#include "main.h"
 /**
- * prime_factors - function declaration
- * Description: finds largest prime factor
- * @test_num: number to test
- * Return: void
+ * print_number - prints an integer
+ * @n: integer to be printed
  */
-
-void prime_factors(long test_num);
-
-/**
- * main - entry point
- * Description: calls prime_factors
- * Return: 0
- */
-
-int main(void)
+void print_number(int n)
 {
-	prime_factors(612852475143);
-	return (0);
-}
+	unsigned int n1;
 
-/**
- * prime_factors - function definition
- * Description: finds the largest prime factor
- * @test_num: the number to test
- * Return: void
- */
-
-void prime_factors(long test_num)
-{
-	long divisor = 2;
-
-	while (divisor != test_num)
+	if (n < 0)
 	{
-		if (test_num % divisor == 0)
-		{
-			test_num /= divisor;
-		}
-		else
-		{
-			divisor++;
-		}
+		n1 = -n;
+		_putchar('-');
+	} else
+	{
+		n1 = n;
 	}
-	printf("%ld\n", test_num);
+	if (n1 / 10)
+	{
+		print_number(n1 / 10);
+	}
+	_putchar((n1 % 10) + '0');
 }
