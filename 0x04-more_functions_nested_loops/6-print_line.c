@@ -3,16 +3,19 @@
  * print_line - draws a straight line in the terminal
  * @n: number of times the character _ should be printed
  */
-void print_line(int n);
-
 void print_line(int n)
 {
-	int counti = 0;
-
-	while (n > 0 && counti < n)
+	if (n <= 0)
 	{
-		_putchsr('_');
-		counti++;
+		_putchar('\n');
+	} else
+	{
+		int i;
+
+		for (i = 1; i <= n; i++)
+		{
+			_putchsr('_');
+		}
+		_putchar('\n');
 	}
-	_putchsr('\n');
 }
